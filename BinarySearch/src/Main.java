@@ -6,18 +6,18 @@ public class Main {
 
     public static int binarySearch(int key, int[] arr){
         int lo = 0;
-        int hi = arr.length - 1;
+        int hi = arr.length - 1; // we count from 0 to N-1
         while(lo<=hi){
-            int mid = (lo + hi)/2;
+            int mid = (lo + hi)/2; // In order to avoid overflow we can use (lo + (hi - lo))/2
             if(arr[mid] == key){
                 return mid;
             }
             if(key>arr[mid]){
-                lo = mid + 1;
+                lo = mid + 1; // moves starting point on 1 from previous middle
                 continue;
             }
             if(key<arr[mid]){
-                hi = mid - 1;
+                hi = mid - 1; // moves ending point on -1 from previous middle point
                 continue;
             }
         }
