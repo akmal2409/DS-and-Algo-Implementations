@@ -57,4 +57,58 @@ public class BST {
             inOrderRec(root.right);  // after sout because all the data on the right is in an increasing order
         }
     }
+
+    // Iterative approach going down to the left
+    public int findMinIterative(){
+        BstNode temp = root;
+
+        while(temp.left != null){
+            temp = temp.left;
+        }
+
+        return temp.data;
+    }
+
+    public int findMin(){
+
+        return findMinRec(root).data;
+    }
+
+    public BstNode findMinRec(BstNode root){
+
+        if(root == null){
+            return null;
+        } else if(root.left == null){
+            return root;
+        }
+
+        return findMinRec(root.left);
+    }
+
+    public int findMaxIterative(){
+
+        BstNode temp = root;
+
+        while(temp.right != null){
+            temp = temp.right;
+        }
+
+        return temp.data;
+    }
+
+    public int findMax(){
+
+        return findMaxRec(root).data;
+    }
+
+    public BstNode findMaxRec(BstNode root){
+
+        if(root == null){
+            return null;
+        } else if(root.right == null){
+            return root;
+        }
+
+        return findMaxRec(root.right);
+    }
 }
