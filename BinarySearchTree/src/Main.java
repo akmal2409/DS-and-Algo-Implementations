@@ -27,6 +27,9 @@ public class Main {
 
         System.out.println("/////////////");
         System.out.println(tree.findMax()); // output: 80 passed
+
+        System.out.println("/////////////");
+        System.out.println(tree.findHeight()); // output: 2
     }
 
 }

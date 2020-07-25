@@ -111,4 +111,28 @@ public class BST {
 
         return findMaxRec(root.right);
     }
+
+
+    public int findHeight(){
+        return findHeightRec(root);
+    }
+
+    public int findHeightRec(BstNode root){
+
+        if(root == null){
+            return -1;
+        }
+
+        return max(findHeightRec(root.left), findHeightRec(root.right)) + 1;
+    }
+
+    public int max(int a, int b){
+
+        if(a<b){
+            return a;
+        } else{
+            return b;
+        }
+
+    }
 }
