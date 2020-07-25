@@ -6,6 +6,7 @@ public class Main {
 
         BST tree = new BST();
 
+        /*
         tree.insert(50);
         tree.insert(30);
         tree.insert(20);
@@ -13,6 +14,15 @@ public class Main {
         tree.insert(70);
         tree.insert(60);
         tree.insert(80);
+         */
+
+        tree.insert(1);
+        tree.insert(2);
+        tree.insert(5);
+        tree.insert(3);
+        tree.insert(4);
+        tree.insert(6);
+
 
         tree.inOrder();
 
@@ -30,6 +40,12 @@ public class Main {
 
         System.out.println("/////////////");
         System.out.println(tree.findHeight()); // output: 2
+
+        System.out.println("/////////////");
+        tree.preOrder();
+
+        System.out.println("/////////////");
+        tree.postOrder();
     }
 
 }

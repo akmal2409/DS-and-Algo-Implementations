@@ -1,5 +1,8 @@
 import org.w3c.dom.Node;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class BST {
 
     BstNode root;
@@ -134,5 +137,53 @@ public class BST {
             return b;
         }
 
+    }
+
+
+    public void preOrder(){
+        preOrderRec(root);
+    }
+
+    public void preOrderRec(BstNode root){
+
+        if(root != null){
+            System.out.println(root.data);
+            preOrderRec(root.left);
+            preOrderRec(root.right);
+        }
+    }
+
+    public void postOrder(){
+        postOrderRec(root);
+    }
+
+    public void postOrderRec(BstNode root){
+
+        if(root != null){
+            postOrderRec(root.left);
+            postOrderRec(root.right);
+            System.out.println(root.data);
+        }
+    }
+
+    public void levelOrder(){
+        if(root == null){
+            return;
+        }
+
+        Queue<BstNode> q = new LinkedList<>();
+        q.add(root);
+
+        while(!q.isEmpty()){
+            BstNode current = q.element();
+            q.remove();
+            System.out.println(current.data);
+            if(current.left != null){
+                q.add(current.left);
+            }
+            if(current.right != null){
+                q.add(current.right);
+            }
+        }
     }
 }
